@@ -1,5 +1,10 @@
-user_option = input("¿Piedra, papel o tijera?:")
-computer_option = "piedra"
+import random
+
+user_option = input("¿Piedra, papel o tijera?:").lower()
+options = ("piedra", "papel", "tijera")
+computer_option = random.choice(options)
+
+print(f'Usuario: {user_option} / Computadora: {computer_option}')
 
 if user_option == computer_option:
     print("Empate!")
