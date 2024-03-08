@@ -1,4 +1,5 @@
 import random
+import print_options
 
 # Game options.
 options = ("rock", "paper", "scissors")
@@ -13,30 +14,48 @@ while opt == "yes":
 
     # Game results
     if user_option == computer_option:
-        print(f'User: {user_option} vs Computer: {computer_option}.\n')
-        print("Draw!")
-
+        if user_option == options[0]:
+            print_options.user_print_rock()
+            print((" "*25)+"It's a draw!\n")
+            print_options.comp_print_rock()
+        elif user_option == options[1]:
+            print_options.user_print_paper()
+            print((" "*25)+"It's a draw!\n")
+            print_options.comp_print_paper()
+        elif user_option == options[2]:
+            print_options.user_print_scissors()
+            print((" "*25)+"It's a draw!\n")
+            print_options.comp_print_scissors()
     elif user_option == options[0]:
         if computer_option == options[2]:
-            print(f'User: {user_option} vs Computer: {computer_option}.\n')
-            print("You win!")
+            print_options.user_print_rock()
+            print((" "*25)+"You win!\n")
+            print_options.comp_print_scissors()
         else:
-            print(f'User: {user_option} vs Computer: {computer_option}.\n')
-            print(f"Your opponent had {computer_option}, therefore you lost!")
+            print_options.user_print_rock()
+            print((" "*25)+"You lost!\n")
+            print_options.comp_print_paper()
+
     elif user_option == options[1]:
         if computer_option == options[0]:
-            print(f'User: {user_option} vs Computer: {computer_option}.\n')
-            print("You win!")
+            print_options.user_print_paper()
+            print((" "*25)+"You win!\n")
+            print_options.comp_print_rock()
         else:
-            print(f'User: {user_option} vs Computer: {computer_option}.\n')
-            print(f"Your opponent had {computer_option}, therefore you lost!")
+            print_options.user_print_paper()
+            print((" "*25)+"You lost!\n")
+            print_options.comp_print_scissors()
+
     elif user_option == options[2]:
         if computer_option == options[1]:
-            print(f'User: {user_option} vs Computer: {computer_option}.\n')
-            print("You win!")
+            print_options.user_print_scissors()
+            print((" "*25)+"You win!\n")
+            print_options.comp_print_paper()
         else:
-            print(f'User: {user_option} vs Computer: {computer_option}.\n')
-            print(f"Your opponent had {computer_option}, therefore you lost!")
+            print_options.user_print_scissors()
+            print((" "*25)+"You lost!\n")
+            print_options.comp_print_rock()
+
     else:
         print("Invalid option")
     opt = input(f'¿Do you want to play again? (Yes/No): ').lower()
