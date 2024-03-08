@@ -1,2 +1,2 @@
-# Juego-piedra-papel-o-tijera
-Desarrollo de primer juego de piedra, papel o tijera.
+# Rock-paper-scissors Game
+This is the first game developed in Python.
