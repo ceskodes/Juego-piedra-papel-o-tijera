@@ -66,6 +66,9 @@ def run_game():
         total_games = input("How many win should the winner have?: ")
         while (user_score != total_games) and (comp_score != total_games):
             user_option, computer_option = pick_option(options)
+            if user_option not in options:
+                print("Invalid option.\nTry again.")
+                continue
             if game_rules(user_option,computer_option, options) == "u":
                 user_score+=1
             else:
